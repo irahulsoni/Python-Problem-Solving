@@ -1,14 +1,4 @@
-class Solution(object):
-    def countOdds(self, low, high):
-        count = 0
-        if low % 2 == 1 and high % 2 ==1:
-            count += 2
-            count += (high - 1 - low-1) // 2
-        elif low%2 == 1 or high%2 ==1:
-            count+=1
-            count+=(high - 1 - low)//2
-        else:
-            count+=(high - low)//2
-        return count
-
-        
+class Solution:
+    def countOdds(self, low: int, high: int) -> int:
+        diff = high - low
+        return diff//2 + 1 if high%2 or low%2 else diff//2
